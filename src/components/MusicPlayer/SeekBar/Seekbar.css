@@ -1,0 +1,67 @@
+.Seekbar,
+.Seekbar__lower,
+.Seekbar__raise {
+    display: none;
+}
+
+.Seekbar__lower,
+.Seekbar__raise,
+.Seekbar__timer-1,
+.Seekbar__timer-2 {
+    color: white;
+}
+
+.Seekbar__lower, 
+.Seekbar__raise {
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: red;
+}
+
+.Seekbar__time-input {
+    width: 6rem;
+    height: 0.25rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+}
+
+
+@media screen and (min-width: 640px) {
+    .Seekbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+
+@media screen and (min-width: 768px) {
+    .Seekbar__time-input {
+        display: block;
+        width: 14rem;
+
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .Seekbar__lower {
+        display: block;
+        margin-right: 1rem;
+    }
+
+    .Seekbar__raise {
+        display: block;
+        margin-left: 1rem;
+    }
+}
+
+
+@media screen and (min-width: 1536px) {
+    .Seekbar__time-input {
+        width: 24rem;
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+}

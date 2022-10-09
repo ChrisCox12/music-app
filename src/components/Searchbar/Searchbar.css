@@ -1,0 +1,42 @@
+.Searchbar__Form {
+    padding: 0.5rem;
+}
+
+.Searchbar__Form__Label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.Searchbar__Form__InputBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.Searchbar__Form__InputBar__Icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 1rem;
+    margin-right: 0.25rem;
+    color: wheat;
+}
+
+.Searchbar__Form__InputBar__Input {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    color: white;
+    padding: 1rem;
+}
+
+.Searchbar__Form__InputBar__Input::placeholder {
+    color: wheat;
+}

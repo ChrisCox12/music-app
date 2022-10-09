@@ -1,0 +1,41 @@
+.Controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.Controls > * {
+    cursor: pointer;
+}
+
+.Controls__repeat,
+.Controls__shuffle {
+    display: none;
+}
+
+
+@media screen and (min-width: 640px) {
+    .Controls__repeat,
+    .Controls__shuffle {
+        display: block;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .Controls {
+        width: 9rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .Controls {
+        width: 13rem;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .Controls {
+        width: 20rem;
+    }
+}

@@ -1,0 +1,75 @@
+.SongCard {
+    display: flex;
+    flex-direction: column;
+    width: 15.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    background-color: hsla(0, 0%, 100%, 0.1);
+    animation: slideup 1s ease-in-out;
+}
+
+.SongCard a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.SongCard__art {
+    position: relative;
+    width: 100%;
+    height: 14.5rem;
+}
+
+.SongCard__art:hover > div {
+    display: flex;
+}
+
+.SongCard__art > div {
+    position: absolute;
+    inset: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: hsla(0, 0%, 0%, 0.5);
+}
+
+.SongCard__details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.SongCard__details__title {
+    font-weight: 600;
+    color: white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.SongCard__details__artist {
+    color: hsl(0, 0%, 81%);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 0.25rem;
+}
+
+.currentSong {
+    display: flex;
+    background-color: hsla(0, 0%, 0%, 0.7);
+}
+
+.hidden { 
+    display: none;
+}
+
+@keyframes slideup {
+    from {
+        opacity: 0;
+        transform: translateY(25%);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}

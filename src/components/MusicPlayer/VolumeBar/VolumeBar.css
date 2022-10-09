@@ -1,0 +1,30 @@
+.VolumeBar {
+    display: none;
+}
+
+.VolumeBar__input {
+    height: 0.25rem;
+    margin-left: 0.5rem;
+}
+
+
+@media screen and (min-width: 768px) {
+    .VolumeBar__input {
+        width: 8rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .VolumeBar {
+        display: flex;
+        flex: 1;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+@media screen and (min-width: 1536px) {
+    .VolumeBar__input {
+        width: 10rem;
+    }
+}

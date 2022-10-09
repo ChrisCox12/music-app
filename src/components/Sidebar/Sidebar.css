@@ -1,0 +1,82 @@
+.Sidebar {
+    display: none;
+    background: hsl(118, 100%, 6%);
+}
+
+.Links {
+    margin-top: 2.5rem;
+}
+
+.Links__link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    color: rgb(0, 255, 170);
+    margin: 1.5rem 0;
+}
+
+.Links__link:hover {
+    color: yellow;
+}
+
+.Links__link__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.75rem;
+}
+
+.MenuButton {
+    position: absolute;
+    display: block;
+    top: 1.5rem;
+    right: 0.75rem;
+    cursor: pointer;
+}
+
+.MenuButton > * {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: white;
+    margin-right: 0.5rem;
+}
+
+.MobileMenu {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    width: 66%;
+    z-index: 10;
+    padding: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(to right, hsla(0, 0%, 100%, 0.1), hsla(0, 0%, 50%, 1));
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+.on-screen {
+    left: 0;
+}
+
+.off-screen {
+    left: -100%;
+}
+
+@media screen and (min-width: 768px) {
+    .Sidebar {
+        display: flex;
+        flex-direction: column;
+        width: 15rem;
+        padding: 2.5rem 1rem;
+    }
+
+    .MenuButton {
+        display: none;
+    }
+
+    .MobileMenu {
+        display: none;
+    }
+}

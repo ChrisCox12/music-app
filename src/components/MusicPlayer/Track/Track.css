@@ -1,0 +1,56 @@
+.Track {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+.Track__cover-art {
+    display: none;
+}
+
+.Track__details {
+    width: 50%;
+}
+
+.Track__details__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: white;
+    font-weight: bold;
+}
+
+.Track__details__artist {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.Track__cover-art > img {
+    border-radius: 9999px;
+}
+
+.animate-art {
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    from { 
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+@media screen and (min-width: 640px) {
+    .Track__cover-art {
+        display: block;
+        height: 4rem;
+        width: 4rem;
+        margin-right: 1rem;
+    }
+}

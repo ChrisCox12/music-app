@@ -1,0 +1,20 @@
+.SongDetails {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.SongDetails__Lyrics {
+    margin-bottom: 2.5rem;
+}
+
+.SongDetails__Lyrics > h2 {
+    color: white;
+    font-weight: bold;
+    font-size: 1.75rem;
+}
+
+.SongDetails__Lyrics__Lyrics {
+    margin-top: 1.25rem;
+    color: white;
+}
