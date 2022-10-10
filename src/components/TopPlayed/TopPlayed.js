@@ -14,7 +14,7 @@ import 'swiper/css/free-mode';
 function TopChartCard({ song, index, isPlaying, activeSong, handlePauseClick, handlePlayClick }) {
     
     return (
-        <div className={`TopChartCard ${activeSong?.title === song?.title ? '--active' : ''}`}>
+        <div className={`TopChartCard ${(activeSong?.title === song.title && activeSong?.subtitle === song.subtitle) ? '--active' : ''}`}>
             <h3>{index + 1}.</h3>
             
             <div className='TopChartCard__Song'>

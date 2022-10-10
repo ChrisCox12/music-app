@@ -22,7 +22,7 @@ export default function MusicPlayer() {
     
     // if the index changes, then automatically play the song at that index
     useEffect(() => {
-        if (currentSongs.length) dispatch( playPause(true) );
+        if (currentSongs?.length) dispatch( playPause(true) );
     }, [currentIndex]);
 
 

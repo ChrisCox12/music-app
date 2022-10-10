@@ -7,7 +7,7 @@ import './Songbar.css';
 export default function Songbar({ song, index, artistId, isPlaying, activeSong, handlePauseClick, handlePlayClick }) {
 
     return (
-        <div className={`Songbar ${(activeSong?.title && activeSong?.title === song?.title) ? '--active' : '--not-active'}`}>
+        <div className={`Songbar ${(activeSong?.title && activeSong?.title === song.title && activeSong?.subtitle === song.subtitle) ? '--active' : ''}`}>
             <h3 className='Songbar__Index'>{index + 1}.</h3>
 
             <div className='Songbar__SongDetails'>

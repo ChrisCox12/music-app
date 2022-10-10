@@ -8,7 +8,7 @@ import { playPause, setActiveSong } from '../../redux/slices/playerSlice';
 
 export default function SongCard({ song, index, isPlaying, activeSong, data }) {
     const dispatch = useDispatch();
-
+    
 
     function handlePauseClick() {
         dispatch( playPause(false) );
@@ -23,7 +23,7 @@ export default function SongCard({ song, index, isPlaying, activeSong, data }) {
     return (
         <div className='SongCard'>
             <div className='SongCard__art'>
-                <div className={`${activeSong?.title === song.title ? 'currentSong': 'hidden'}`}>
+                <div className={`${(activeSong?.title === song.title && activeSong?.subtitle === song.subtitle) ? 'currentSong': 'hidden'}`}>
                     <PlayPause 
                         song={song} 
                         handlePause={handlePauseClick} 
