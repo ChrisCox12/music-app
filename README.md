@@ -77,7 +77,7 @@ Users should be able to:
 
 ### Continued Development
 
-Going forward, I would like to get the Around You page to function properly at all times. The page uses the Geoipify API to find country based on IP address andthen uses that information to find about songs currently popular in that country and, finally, display that information to the user. Sometimes, the information doesn't get pulled resulting in the songs section being blank.
+Going forward, I would like to get the Around You page to function properly at all times. The page uses the Geoipify API to find country based on IP address and then uses that information to find about songs currently popular in that country and, finally, display that information to the user. Sometimes, the information doesn't get pulled resulting in the songs section being blank.
 
 ## Author
 - Website - [Christopher Cox](https://chriscox12.github.io/)
