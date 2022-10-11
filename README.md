@@ -3,7 +3,7 @@
 ## Table of Contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
+  - [The goal](#the-goal)
   - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
@@ -14,7 +14,7 @@
 
 ## Overview
 
-### The Challenge
+### The Goal
 
 The goal of this project was to create a music application, something similiar to Spotify or Shazam. 
 
