@@ -5,7 +5,7 @@ import './DetailsHeader.css';
 
 export default function DetailsHeader({ artistId, artistData, songData }) {
     const artist = artistData?.artists[artistId]?.attributes;
-
+    //console.log('song data: ', songData)
     
     return (
         <div className='DetailsHeader'>
@@ -15,18 +15,19 @@ export default function DetailsHeader({ artistId, artistData, songData }) {
                             artist?.artwork?.url.replace('{w}', 500).replace('{h}', 500)
                         ) : (
                             songData?.images?.coverart
-                        )
-                    }
+                        )}
                     alt='cover art'
                 />
 
                 <div className='DetailsHeader__Details__Item'>
                     <p className='DetailsHeader__Details__Item__Name'>{artistId ? artist?.name : songData?.title}</p>
 
-                    {!artistId && (
-                        <Link className='DetailsHeader__Details__Item__Link' to={`/artists/${songData?.artists[0].adamid}`}>
+                    {(!artistId && songData?.artists) ? (
+                        <Link className='DetailsHeader__Details__Item__Link' to={`/artists/${songData?.artists[0]?.adamid}`}>
                             {songData?.subtitle}
                         </Link>
+                    ) : (
+                        <p className='DetailsHeader__Details__Item__Artist'>{songData?.subtitle}</p>
                     )}
 
                     <p className='DetailsHeader__Details__Item__Genre'>{artistId ? artist?.genreNames[0] : songData?.genres?.primary}</p>

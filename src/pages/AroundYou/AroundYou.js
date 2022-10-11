@@ -14,14 +14,14 @@ export default function AroundYou() {
     const [loading, setLoading] = useState(true);
     const { activeSong, isPlaying } = useSelector(state => state.player);
     const { data, isFetching, error } = useGetSongsByCountryQuery({ countryCode: country });
-
+    //console.log(error, country)
 
     useEffect(() => {
         // Finds country using GeoIpify api 
-        // NOTE: Chrome manages to pull infomation from request but Edge and Firefox run into a CORS issue
+        // NOTE: Sometimes the geolocation information doesn't get pulled, leaving the songs section blank
         axios.get(`https://geo.ipify.org/api/v2/country?apiKey=${geoipify_api_key}`)
             .then(res => setCountry(res?.data?.location?.country))
-            .catch(err => console.log(err))
+            .catch(err => console.log('Error Fetching Songs Around You'))
             .finally(() => setLoading(false))
     }, [country]);
 

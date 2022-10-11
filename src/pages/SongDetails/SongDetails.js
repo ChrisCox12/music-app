@@ -13,7 +13,7 @@ export default function SongDetails() {
     const { activeSong, isPlaying } = useSelector(state => state.player);
     const { data: songData, isFetching: isFetchingSongDetails } = useGetSongDetailsQuery({ songId });
     const { data: relatedSongs, isFetching: isFetchingRelatedSongs, error } = useGetRelatedSongsQuery({ songId });
-    
+    //console.log(relatedSongs)
     
     function handlePauseClick() {
         dispatch( playPause(false) );

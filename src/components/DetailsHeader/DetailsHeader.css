@@ -36,7 +36,8 @@
     color: white;
 }
 
-.DetailsHeader__Details__Item__Link {
+.DetailsHeader__Details__Item__Link,
+.DetailsHeader__Details__Item__Artist {
     display: block;
     text-decoration: none;
     color: hsl(0, 0%, 81%);

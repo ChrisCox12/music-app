@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# Music App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshots](#screenshots)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+- [Author](#author)
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+### The Challenge
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The goal of this project was to create a music application, something similiar to Spotify or Shazam. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users should be able to:
 
-### `npm test`
+    - See and listen to some of the most popular songs and artists right now
+    - For any particular song, view its lyrics
+    - For any particular song, view related songs
+    - View some of an artist's most popular songs in their discography 
+    - View popular songs by genre
+    - View popular artists
+    - View popular songs around a user given their country
+    - Search songs given some input
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Screenshots
 
-### `npm run build`
+- Discover Page
+    - Pop
+    ![Discover Page - Pop](./screenshots/music-app-2.PNG)
+    - Electronic
+    ![Discover Page - Electronic](./screenshots/music-app-discover-2.PNG)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Song Details
+    - Lyrics
+    ![Song Details - Lyrics](./screenshots/music-app-3.PNG)
+    - Related Songs
+    ![Song Details - Related Songs](./screenshots/music-app-related-songs.PNG)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Top Artists Page
+    ![Top Artists](./screenshots/music-app-top-artists.PNG)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Top Charts Page
+    ![Top Charts](./screenshots/music-app-top-charts.PNG)
 
-### `npm run eject`
+- Around You Page
+    ![Around You](./screenshots/music-app-around-you.PNG)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Links
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Live Site URL: [Music App](https://musical-donut-5e9f14.netlify.app/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## My Process
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Built With
 
-## Learn More
+- [RapidApi](https://rapidapi.com/) - An API hub that makes it easier to find and connect to other APIs
+- [Geoipify](https://geo.ipify.org/) - A geolocation API that allows you to find a location using an IP address
+- [React](https://reactjs.org/) - A JS front-end library
+- [Redux Toolkit](https://redux-toolkit.js.org/) - A package that standardizes the Redux state management library
+- [Dotenv](https://www.dotenv.org/) - A module that safely and securely loads environment variables from a .env file into an application
+- Custom CSS properties
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### What I Learned
 
-### Code Splitting
+- A bit on how to use the audio element for media playback
+- A bit on how to use useRef and refs in React and when to use them
+- How to use the Geoipify API for geolocation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+### Continued Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Going forward, I would like to get the Around You page to function properly at all times. The page uses the Geoipify API to find country based on IP address andthen uses that information to find about songs currently popular in that country and, finally, display that information to the user. Sometimes, the information doesn't get pulled resulting in the songs section being blank.
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+- Website - [Christopher Cox](https://chriscox12.github.io/)
