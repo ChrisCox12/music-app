@@ -28,6 +28,8 @@ export default function SongDetails() {
     if (isFetchingRelatedSongs || isFetchingSongDetails) return <Loader />;
     if (error) return <Error />;
 
+    //console.log(relatedSongs)
+
     return (
         <div className='SongDetails'>
             <DetailsHeader artistID={''} songData={songData} />

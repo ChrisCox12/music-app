@@ -25,9 +25,16 @@ function TopChartCard({ song, index, isPlaying, activeSong, handlePauseClick, ha
                         {song?.title}
                     </Link>
 
-                    <Link className='TopChartCard__Song__Links__Artist' to={`/artists/${song?.artists[0].adamid}`}>
+                    {song?.artists ? (
+                        <Link className='TopChartCard__Song__Links__Artist--Link' to={`/artists/${song?.artists[0].adamid}`}>
+                            {song?.subtitle}
+                        </Link>
+                    ) : (
+                        <p className='TopChartCard__Song__Links__Artist--NonLink'>{song?.subtitle}</p>
+                    )}
+                    {/* <Link className='TopChartCard__Song__Links__Artist' to={`/artists/${song?.artists[0].adamid}`}>
                         {song?.subtitle}
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
 
@@ -53,7 +60,7 @@ export default function TopPlayed() {
     /* useEffect(() => {
         //  scrolls to the top of the div because
         //  on smaller screens, for some reason, it starts at the bottom
-        //  also causes the pge to scroll down slightly everytime the pause play button is hit on larger screens
+        //  also causes the page to scroll down slightly everytime the pause play button is hit on larger screens
         ref.current.scrollIntoView({ behavior: 'smooth' });
     }); */
 
@@ -117,9 +124,9 @@ export default function TopPlayed() {
                             key={song?.key}  
                             className='TopPlayed__TopArtists__Swiper__SwiperSlide'
                         >
-                            <Link to={`/artists/${song?.artists[0].adamid}`}>
+                            {/* <Link to={`/artists/${song?.artists[0]?.adamid}`}>
                                 <img src={song?.images.background} alt='artist' />
-                            </Link>
+                            </Link> */}
                         </SwiperSlide>
                     ))}
                 </Swiper>

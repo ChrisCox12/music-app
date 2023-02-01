@@ -102,7 +102,8 @@
     font-weight: bold;
 }
 
-.TopChartCard__Song__Links__Artist {
+.TopChartCard__Song__Links__Artist--Link,
+.TopChartCard__Song__Links__Artist--NonLink {
     color: hsl(0, 0%, 81%);
 }
 

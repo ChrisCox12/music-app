@@ -3,6 +3,12 @@
     margin-top: 2rem;
 }
 
+.ArtistDetails__Bio {
+    color: hsl(0, 0%, 81%);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+}
+
 
 @media screen and (min-width: 1280px) { 
     .ArtistDetails {

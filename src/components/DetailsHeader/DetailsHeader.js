@@ -4,7 +4,10 @@ import './DetailsHeader.css';
 
 
 export default function DetailsHeader({ artistId, artistData, songData }) {
-    const artist = artistData?.artists[artistId]?.attributes;
+    //console.log(artistData.data[0].attributes)
+    //const artist = artistData?.artists[artistId]?.attributes;
+    //const artist = artistData?.data[0]?.attributes;
+    const artist = artistData?.attributes;
     //console.log('song data: ', songData)
     
     return (
