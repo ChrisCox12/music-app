@@ -6,6 +6,7 @@ import { FreeMode } from 'swiper';
 import PlayPause from '../PlayPause';
 import { playPause, setActiveSong } from '../../redux/slices/playerSlice';
 import { useGetTopChartsQuery } from '../../redux/utils/shazamCore';
+import ImageNotFound from '../ImageNotFound/ImageNotFound';
 import './TopPlayed.css';
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -18,7 +19,11 @@ function TopChartCard({ song, index, isPlaying, activeSong, handlePauseClick, ha
             <h3>{index + 1}.</h3>
             
             <div className='TopChartCard__Song'>
-                <img className='TopChartCard__Song__CoverArt' src={song?.images?.coverart} alt='cover art' />
+                {song?.images?.coverart ? (
+                    <img className='TopChartCard__Song__CoverArt' src={song.images.coverart} alt='cover art' />
+                ) : (
+                    <ImageNotFound />
+                )}
 
                 <div className='TopChartCard__Song__Links'>
                     <Link className='TopChartCard__Song__Links__Song' to={`/songs/${song?.key}`}>
@@ -32,9 +37,6 @@ function TopChartCard({ song, index, isPlaying, activeSong, handlePauseClick, ha
                     ) : (
                         <p className='TopChartCard__Song__Links__Artist--NonLink'>{song?.subtitle}</p>
                     )}
-                    {/* <Link className='TopChartCard__Song__Links__Artist' to={`/artists/${song?.artists[0].adamid}`}>
-                        {song?.subtitle}
-                    </Link> */}
                 </div>
             </div>
 
@@ -63,7 +65,6 @@ export default function TopPlayed() {
         //  also causes the page to scroll down slightly everytime the pause play button is hit on larger screens
         ref.current.scrollIntoView({ behavior: 'smooth' });
     }); */
-
 
     function handlePauseClick() {
         dispatch( playPause(false) );
@@ -124,9 +125,20 @@ export default function TopPlayed() {
                             key={song?.key}  
                             className='TopPlayed__TopArtists__Swiper__SwiperSlide'
                         >
-                            {/* <Link to={`/artists/${song?.artists[0]?.adamid}`}>
-                                <img src={song?.images.background} alt='artist' />
-                            </Link> */}
+                            {song?.artists ? (
+                                <>
+                                    <Link to={`/artists/${song?.artists[0]?.adamid}`}>
+                                        <img src={song?.images.background} alt={`artist ${song?.subtitle}`} />
+                                    </Link>
+                                    <span>{song?.subtitle}</span>
+                                </>
+                                
+                            ) : (
+                                <>
+                                    <ImageNotFound />
+                                    <span>{song?.subtitle}</span>
+                                </>
+                            )}
                         </SwiperSlide>
                     ))}
                 </Swiper>

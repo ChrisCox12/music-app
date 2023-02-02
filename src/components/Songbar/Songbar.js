@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PlayPause from '../PlayPause';
+import ImageNotFound from '../ImageNotFound/ImageNotFound';
 import './Songbar.css';
 
 
@@ -11,16 +12,22 @@ export default function Songbar({ song, index, artistId, isPlaying, activeSong, 
             <h3 className='Songbar__Index'>{index + 1}.</h3>
 
             <div className='Songbar__SongDetails'>
-                <img 
-                    className='Songbar__SongDetails__Image'
-                    src={artistId ? (
-                            song?.attributes?.artwork?.url.replace('{w}', '125').replace('{h}', '125')
-                        ) : (
-                            song?.images?.coverart
-                        )}
-                    alt={song?.title}
-                />
-                
+                {song?.attributes?.artwork?.url ? (
+                    <img 
+                        className='Songbar__SongDetails__Image'
+                        src={song.attributes.artwork.url.replace('{w}', '125').replace('{h}', '125')}
+                        alt={song?.title}
+                    />
+                ) : song?.images?.coverart ? (
+                    <img 
+                        className='Songbar__SongDetails__Image'
+                        src={song.images.coverart}
+                        alt={song?.title}
+                    />
+                ) : (
+                    <ImageNotFound />
+                )}
+
                 <div className='Songbar__SongDetails__Song-Artist'>
                     {!artistId ? (
                         <Link className='Songbar__SongDetails__Song-Artist__Link' to={`/songs/${song?.key}`}>

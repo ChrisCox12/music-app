@@ -3,7 +3,18 @@
     margin-top: 2rem;
 }
 
+
 .ArtistDetails__Bio {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.ArtistDetails__Bio__Head {
+    color: white;
+}
+
+.ArtistDetails__Bio__Bio {
     color: hsl(0, 0%, 81%);
     font-size: 1.05rem;
     margin-bottom: 1.5rem;

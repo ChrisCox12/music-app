@@ -1,26 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ImageNotFound from '../ImageNotFound/ImageNotFound';
 import './DetailsHeader.css';
 
 
 export default function DetailsHeader({ artistId, artistData, songData }) {
-    //console.log(artistData.data[0].attributes)
-    //const artist = artistData?.artists[artistId]?.attributes;
-    //const artist = artistData?.data[0]?.attributes;
     const artist = artistData?.attributes;
-    //console.log('song data: ', songData)
     
     return (
         <div className='DetailsHeader'>
             <div className='DetailsHeader__Details'>
-                <img 
-                    src={artistId ? (
-                            artist?.artwork?.url.replace('{w}', 500).replace('{h}', 500)
-                        ) : (
-                            songData?.images?.coverart
-                        )}
-                    alt='cover art'
-                />
+                {artist?.artwork?.url ? (
+                    <img 
+                        src={artist.artwork.url.replace('{w}', 500).replace('{h}', 500)}
+                        alt='cover art'
+                    />
+                ) : songData?.images?.coverart ? (
+                    <img 
+                        src={songData.images.coverart}
+                        alt='cover art'
+                    />
+                ) : (
+                    <ImageNotFound />
+                )}
 
                 <div className='DetailsHeader__Details__Item'>
                     <p className='DetailsHeader__Details__Item__Name'>{artistId ? artist?.name : songData?.title}</p>

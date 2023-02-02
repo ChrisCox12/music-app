@@ -3,6 +3,7 @@ import './SongCard.css';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import PlayPause from '../PlayPause';
+import ImageNotFound from '../ImageNotFound/ImageNotFound';
 import { playPause, setActiveSong } from '../../redux/slices/playerSlice';
 
 
@@ -33,7 +34,11 @@ export default function SongCard({ song, index, isPlaying, activeSong, data }) {
                     />
                 </div>
 
-                <img alt='cover art' src={song.images?.coverart} />
+                {song?.images?.coverart ? (
+                    <img alt='cover art' src={song.images.coverart} />
+                ) : (
+                    <ImageNotFound />
+                )}
             </div>
 
             <div className='SongCard__details'>
